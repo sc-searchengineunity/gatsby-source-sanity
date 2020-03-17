@@ -1,3 +1,4 @@
+# Just testing if the test.yml works
 # gatsby-source-sanity
 
 Source plugin for pulling data from [Sanity.io](https://www.sanity.io/) into [Gatsby](https://www.gatsbyjs.org/) websites. Develop with real-time preview of all content changes. Compatible with `gatsby-image`.
