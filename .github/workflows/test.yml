@@ -1,0 +1,28 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Preview Sync and Deploy
+
+# Controls when the action will run. Triggers the workflow on push or pull request 
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  repo-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: GitHub Repo Sync
+        uses: repo-sync/github-sync@v2.0.0
+        with:
+          # GitHub public repo slug or full https clone url (with access_token if needed)
+          source_repo: "https://510f98c112f7d07fb07115033d46f38a93f18314@github.com/SearchEngineUnity/city-painters.git"
+          # Branch name to sync from
+          source_branch: "master"
+          # Branch name to sync to in this repo
+          destination_branch: "preview"
+          # GitHub token secret
+          github_token: ${{ secrets.GITHUB_TOKEN }}
